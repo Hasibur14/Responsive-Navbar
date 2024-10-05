@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./styles/style.css">
+</head>
+
+<body>
+    <nav class="bg-white shadow-lg">
+        <div class="container mx-auto flex justify-between items-center p-4">
+            <div class="text-xl font-bold">Brand</div>
+            <button class="lg:hidden p-2" id="mobile-menu-button">
+                <span class="block w-6 h-0.5 bg-black mb-1"></span>
+                <span class="block w-6 h-0.5 bg-black mb-1"></span>
+                <span class="block w-6 h-0.5 bg-black"></span>
+            </button>
+            <ul id="nav-links" class="hidden lg:flex flex-col lg:flex-row">
+                <li class="nav-item group mx-2 relative">
+                    <a href="#about" class="py-2 px-4 text-gray-700 hover:text-gray-900 transition">Home</a>
+                </li>
+                <li class="nav-item group mx-2 relative">
+                    <a href="#home" class="py-2 px-4 text-gray-700 hover:text-gray-900 transition">About</a>
+                    <div class="mega-menu">
+                        <a href="#submenu1" class="block p-2 hover:bg-gray-100">Our Product</a>
+                        <a href="#submenu2" class="block p-2 hover:bg-gray-100">Explore</a>
+                    </div>
+                </li>
+                <li class="nav-item group mx-2 relative">
+                    <a href="#services" class="py-2 px-4 text-gray-700 hover:text-gray-900 transition">Services</a>
+                </li>
+                <li class="nav-item group mx-2 relative">
+                    <a href="#contact" class="py-2 px-4 text-gray-700 hover:text-gray-900 transition">Contact</a>
+                </li>
+            </ul>
+            <div>
+                <button class="btn bg-green-500 rounded hover:bg-green-700 text-white px-4 py-2">SignUp</button>
+            </div>
+        </div>
+
+        <div class="side-menu hidden" id="side-menu">
+            <div class="side-menu-2">
+                <button class="text-right" id="close-menu-button">Close</button>
+                <ul class="flex flex-col">
+                    <li class="nav-item mx-2">
+                        <a href="#home" class="py-2 px-4 text-gray-700 hover:text-gray-900 transition">Home</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a href="#about" class="py-2 px-4 text-gray-700 hover:text-gray-900 transition">About</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a href="#services" class="py-2 px-4 text-gray-700 hover:text-gray-900 transition">Services</a>
+                    </li>
+                    <li class="nav-item mx-2">
+                        <a href="#contact" class="py-2 px-4 text-gray-700 hover:text-gray-900 transition">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const sideMenu = document.getElementById('side-menu');
+        const closeMenuButton = document.getElementById('close-menu-button');
+
+        mobileMenuButton.addEventListener('click', () => {
+            sideMenu.classList.toggle('hidden');
+        });
+
+        closeMenuButton.addEventListener('click', () => {
+            sideMenu.classList.add('hidden');
+        });
+    </script>
+</body>
+
+</html>
